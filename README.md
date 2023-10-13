@@ -7,7 +7,7 @@ In this document, I will be going through how to setup the build environment by 
 ## Step 1: Launch EC2 Instance
 - Log into our AWS console. Create new instance followed by adding a suitable name. 
 
-  ![Alt text](<images/Launch_instance .png>)
+  <img src="images/Launch_instance .png" width="500" height="500">
 
 - Select **20.04 lts** for the AMI.
 ![Alt text](images/AMI.png)
@@ -16,11 +16,11 @@ In this document, I will be going through how to setup the build environment by 
 - **Instance type**- t2.micro or t2.medium. 
 - **Network settings** - Click edit on top right. On VPC required, select the **VPC** we created. For subnet, choose the public-subnet. This means that the instance will be launched in the public subnet of your VPC. Enable "Auto-assign Public IP". This ensures that the instance will be assigned a public IP address.
   
-  ![Alt text](images/network_settings.png)
+  <img src="images/network_settings.png" width="400" height="400">
 
 - **Create security group** - since we want to **allow connections to Jenkins**, we will need to create a new Security Group with the necessary rules. I have allowed inbound traffic for SSH, HTTP and port 8080 for Jenkins. 
 
-  ![Alt text](images/security_rules.png)
+  <img src="images/security_rules.png" width="400" height="500">
    
 - After your instance has been created, we will connect to it!
 
@@ -83,7 +83,7 @@ After running these commands, Jenkins should be installed and running. You can a
 - Now that our Jenkins is up and running in our EC2 build environment. We can access via web through our EC2 public ip and jenkins port. 
 This is the page we should see. 
 
-  <img src="images/unlock_jenkins_page.png" width="500" height="400">
+  <img src="images/unlock_jenkins_page.png" width="600" height="500">
 
 - We can access the password through our gitbash terminal by running this command: 
 
@@ -92,9 +92,9 @@ This is the page we should see.
    ```
 - After entering your passsword. You should see Customize Jenkins page, select **Install suggested plugins**. 
   
-   <img src="images/customise_jenkins.png" width="500" height="500">
+   <img src="images/customise_jenkins.png" width="600" height="500">
 
-   <img src="images/getting_started_page.png" width="500" height="500">
+   <img src="images/getting_started_page.png" width="600" height="500">
 
 - It should then prompt us to add the following details, enter details in the field followed by **save and continue**.
   
@@ -102,7 +102,7 @@ This is the page we should see.
 
 - At this point you should be able to see the following page: Jenkins home page.
   
-  <img src="images/jenkins_page.png" width="700" height="300">
+  <img src="images/jenkins_page.png" width="700" height="400">
 
 
 ## Install Jenkins Plugins
