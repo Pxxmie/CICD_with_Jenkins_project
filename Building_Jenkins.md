@@ -2,6 +2,8 @@
 
 In this document, I will be going through how to setup the build environment by deploying Jenkins on EC2. 
 
+![Alt text](images/jenkins_architecture.png)
+
 ## Step 1: Launch EC2 Instance
 - Log into our AWS console. Create new instance followed by adding a suitable name. 
 
