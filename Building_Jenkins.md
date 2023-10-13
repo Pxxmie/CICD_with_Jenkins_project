@@ -81,7 +81,7 @@ After running these commands, Jenkins should be installed and running. You can a
 - Now that our Jenkins is up and running in our EC2 build environment. We can access via web through our EC2 public ip and jenkins port. 
 This is the page we should see. 
 
-  <img src="images/unlock_jenkins_page.png" width="800" height="500">
+  <img src="images/unlock_jenkins_page.png" width="500" height="400">
 
 - We can access the password through our gitbash terminal by running this command: 
 
@@ -90,9 +90,9 @@ This is the page we should see.
    ```
 - After entering your passsword. You should see Customize Jenkins page, select **Install suggested plugins**. 
   
-   <img src="images/customise_jenkins.png" width="800" height="500">
+   <img src="images/customise_jenkins.png" width="500" height="500">
 
-   <img src="images/getting_started_page.png" width="800" height="500">
+   <img src="images/getting_started_page.png" width="500" height="500">
 
 - It should then prompt us to add the following details, enter details in the field followed by **save and continue**.
   
