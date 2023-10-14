@@ -84,4 +84,5 @@ This is the process of getting the Jenkins server up and running.
   sudo systemctl enable jenkins
   ```
   ![Alt text](images/enable_jenkins.png)
+
 After running these commands, Jenkins should be installed and running. You can access the Jenkins via web by copying your public ip address of your EC2 instance followed by :8080 after, for example http://34.248.92.72:8080/

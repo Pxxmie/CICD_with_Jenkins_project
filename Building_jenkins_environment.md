@@ -55,10 +55,19 @@ This is the page we should see.
   
    ![Alt text](images/node_js_settings.png)
 
- - When you create a job, in the build step where you want to use NodeJS, you'll find an option to "Provide Node & npm bin/ folder to PATH". Enable this option.
+## SSH Host Key Verification
 
-   From the "NodeJS Installation" dropdown, select the installation you configured earlier (e.g., "tech254-app-deployment"). This ensures that the specified NodeJS version is used for that specific job. 
+We need to add the public key of github to our known host file to verify the authenticity when we connect to it via SSH.
+We can do this through our gitbash terminal, you would run these commands on the EC2 instance where Jenkins is hosted.
 
-   ![Alt text](images/select_node_added.png)
+The first command switches the current user to jenkins.
+The second command contacts Github and retrives the public key. Then it adds the public key to the known_hosts file for the jenkins user.
+<br>
 
-   
+This is useful for running automated processes that interact with your GitHub repositories.
+
+   ```bash
+   sudo su - jenkins
+   ssh-keyscan github.com >> ~/.ssh/known_hosts
+   ```
+  
