@@ -105,9 +105,9 @@ A **CI/CD pipeline** is a set of automated steps that code goes through from **d
 
 ### Testing 
 
-  Go onto your EC2 instance where Jenkins is hosted and copy the public IP address onto the browser. You should be able to see the nginx server running. 
+  - Go onto your EC2 instance where Jenkins is hosted and copy the public IP address onto the browser. You should be able to see the nginx server running. 
 
-  ![Alt text](images/nginx_server.png)
+    ![Alt text](images/nginx_server.png)
   ## Creating Fourth Job- App deployment 
 
   We will create our fourth job, which will deploy our app.js on port 3000. 
@@ -147,4 +147,6 @@ A **CI/CD pipeline** is a set of automated steps that code goes through from **d
 
  ### Testing
 
+- Finally, we can test our app deployment by copying our public IP address to the browser followed by port 3000 after. 
+  
   ![Alt text](images/port3000.png)
