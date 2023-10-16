@@ -20,13 +20,13 @@ A **CI/CD pipeline** is a set of automated steps that code goes through from **d
   
    Please refer to this document to find out how to [Configure SSH authentication between GitHub and Jenkins.](**https://github.com/Pxxmie/CI_CD/blob/main/SSH_authentication_GitHub_Jenkins.md**)
 
-  ![Alt text](source_code_management.png) 
+   ![Alt text](images/sourcecodemanagement.png)
 
 - We want to enable Github hook trigger for GITScm polling so whenever there's a new commit or push to the GitHub repository, GitHub will notify Jenkins through the webhook. I have also selected Provide Node and NPM bin/folder to Path. Enabling this allows Jenkins to execute Node.js scripts and run other tasks related to Node.js development. 
   
   ![Alt text](images/buildtriggers_buildenviro.png)
 
--  Finally, I have added execute shells from the drop down under Build steps. Running these commands will install all the required dependencies for my Node.js app followed by running the tests.
+-  I have added execute shells from the drop down under Build steps. Running these commands will install all the required dependencies for my Node.js app followed by running the tests.
   
    ```
    cd app/app
@@ -39,6 +39,8 @@ A **CI/CD pipeline** is a set of automated steps that code goes through from **d
    Finally, we need to add some post-build steps. Select your second job from the drop down list and select trigger only if build is stable. This allows the second job to build upon successfully passing test for the first job. Click save.
 
     *note that this is only added after you have created second job*
+
+    ![Alt text](images/post-build.png)
 
    ## Creating Second Job - Merge Dev to Main
 
@@ -57,7 +59,7 @@ A **CI/CD pipeline** is a set of automated steps that code goes through from **d
 
 - In the post build actions, we are going to select build other projects, this means after my second job (merging code from dev to main) successfully merges, it triggers the next job in the pipeline to start automatically. This ensures that the merged code is then further tested and built.
   
-  ![Alt text](images/build_other_projects.png)
+  
 
   ## Creating Third Job - Running Nginx Server 
 
@@ -97,7 +99,11 @@ A **CI/CD pipeline** is a set of automated steps that code goes through from **d
 
   EOF
   ```
-- Testing 
+- Finally, I have added a post build action to trigger the next job upon successful build.
+  
+  ![Alt text](images/build_other_projects.png)
+
+### Testing 
 
   Go onto your EC2 instance where Jenkins is hosted and copy the public IP address onto the browser. You should be able to see the nginx server running. 
 
